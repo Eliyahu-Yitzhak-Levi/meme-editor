@@ -36,15 +36,15 @@ var gImgs = [
 ]
 
 
+
 var gMeme = {
     selectedImgId: 1,
     selectedLineIdx: 0,
     lines: [
         {
-            txt: 'My name is my name',
+            txt: '',
             size: 20,
             color: 'red',
-
         }
     ]
 }
@@ -57,10 +57,17 @@ function getMeme() {
 }
 
 
-function updateMemeTxt(imgId, newTxt) {
-    console.log(imgId);
-    console.log(newTxt);
+function updateMemeTxt(imgId, newTxt) { // updates the text of that meme
+    console.log('imgId is', imgId);
+    console.log('the text is', newTxt);
+
     gMeme.selectedImgId = imgId
+
+    console.log('selectedImgId is', gMeme.selectedImgId);
+
+    gMeme.lines[0].txt = newTxt
+
+    console.log('gMeme.lines[0].txt is :', gMeme.lines[0].txt);
 }
 
 

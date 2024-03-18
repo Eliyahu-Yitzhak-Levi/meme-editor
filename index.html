@@ -45,14 +45,14 @@
 
         <section class="editor-section">
             <div class="canvas-container">
-                <span class="meme-txt">Add text here</span>
-                <canvas class="canvas-meme-editor" width="600" height="584"></canvas>
+                <!-- <span class="meme-txt">Add text here</span> -->
+                <canvas class="canvas-meme-editor" width="800" height="800"></canvas>
             </div>
             <div class="editor-tools">
                 <span oninput="changeImgTxt(this)" contenteditable="true" class="editor-txt">Add text here</span>
                 <div class="buttons-container-txt">
-                    <button class="change-txt-line">↑ ↓</button>
-                    <button class="add-txt-line">+</button>
+                    <button onclick="onNextTxtLine()" class="change-txt-line">↑ ↓</button>
+                    <button onclick="onAddTxtLine()" class="add-txt-line">+</button>
                     <button class="delete-txt-line">🗑</button>
                 </div>
                 <div class="buttons-container-main">

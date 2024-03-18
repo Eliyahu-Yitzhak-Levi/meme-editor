@@ -169,16 +169,18 @@ input {
 
 
 .editor-section {
-    padding: 100px 20px 20px 20px;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
+    padding: 50px 50px 50px 50px;
+    /* display: grid; */
+    grid-template-columns: 1fr 1fr;
     gap: 50px;
 }
+
 
 .canvas-container {
     position: relative;
     border-radius: 5px;
     width: 20vw;
+    height: fit-content;
     border: 3px solid lightgray;
 }
 
@@ -188,9 +190,9 @@ input {
     background-color: #e2d2d2;
 }
 
-.meme-txt {
+.meme-txt.og {
 
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
     font-size: 1.3em;
@@ -198,9 +200,22 @@ input {
     left: 15%;
     min-width: 50%;
     min-height: 10%;
-    position: absolute;
+    position: relative;
     border: 2px solid black;
 }
+
+.meme-txt {
+
+    font-size: 1.3em;
+    top: 5%;
+    left: 15%;
+    min-width: 50%;
+    min-height: 10%;
+    position: relative;
+    border: 2px solid black;
+}
+
+
 
 .editor-tools {
     display: flex;
