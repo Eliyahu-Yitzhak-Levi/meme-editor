@@ -133,6 +133,17 @@ function onNextTxtLine() {
 }
 
 
+function onDeleteTxtLine() {
+    // Find the index of the selected line in the lines array
+    const indexToRemove = gMeme.selectedLineIdx;
+
+    // Remove the line from the lines array
+    gMeme.lines.splice(indexToRemove, 1);
+    gMeme.numOfLines--
+    drawText()
+}
+
+
 
 
 
