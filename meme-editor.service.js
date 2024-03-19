@@ -40,13 +40,29 @@ var gImgs = [
 var gMeme = {
     selectedImgId: 1,
     selectedLineIdx: 0,
+    numOfLines: 0,
     lines: [
         {
-            txt: '',
-            size: 20,
-            color: 'red',
+            txt: 'Add text here',
+            size: '20',
+            color: 'black',
+            xLineStart: 50,
+            yLineStart: 50,
+            xLineEnd: 0,
+            yLineEnd: 0
         }
     ]
+}
+
+
+function newLine(newTxt, newSize, newColor, newXLineStart, newYLineStart,) {
+    return {
+        txt: newTxt,
+        size: newSize,
+        color: newColor,
+        xLineStart: newXLineStart,
+        yLineStart: newYLineStart,
+    }
 }
 
 
