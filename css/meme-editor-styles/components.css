@@ -169,7 +169,7 @@ input {
 
 
 .editor-section {
-    padding: 50px 50px 50px 50px;
+    padding: 100px 100px 100px 100px;
     /* display: grid; */
     grid-template-columns: 1fr 1fr;
     gap: 50px;
@@ -177,9 +177,10 @@ input {
 
 
 .canvas-container {
+    cursor: pointer;
     position: relative;
     border-radius: 5px;
-    width: 20vw;
+    width: 30vw;
     height: fit-content;
     border: 3px solid lightgray;
 }

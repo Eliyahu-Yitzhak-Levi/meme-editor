@@ -23,6 +23,9 @@ function onInit() {
     window.addEventListener('resize', () => resizeCanvas())
     renderMemeGallery()
 
+    // event-listeners-setup
+    onChangeFontSize()
+
 }
 
 function renderMemeGallery() {
@@ -134,14 +137,73 @@ function onNextTxtLine() {
 
 
 function onDeleteTxtLine() {
+    if (gMeme.numOfLines === 0) return
+
     // Find the index of the selected line in the lines array
     const indexToRemove = gMeme.selectedLineIdx;
 
     // Remove the line from the lines array
     gMeme.lines.splice(indexToRemove, 1);
-    gMeme.numOfLines--
+
+    if (gMeme.numOfLines === 0) return
+    else gMeme.numOfLines--
     drawText()
 }
+
+// Add click event listener to the document because the canvas dom element is not initialized here.
+document.addEventListener('click', function (event) {
+    // Get the mouse coordinates relative to the canvas
+    const canvasBounds = gElCanvas.getBoundingClientRect()
+    const mouseX = event.clientX - canvasBounds.left
+    const mouseY = event.clientY - canvasBounds.top
+
+    // Check if the click was within any of the lines
+    gMeme.lines.forEach((line, index) => {
+        const textMetrics = gCtx.measureText(line.txt)
+        const textWidth = textMetrics.width
+        const textHeight = parseInt(gCtx.font)
+        const lineX = line.xLineStart
+        const lineY = line.yLineStart - textHeight // Adjust for text height
+
+        // Check if the click is within the bounding box of this line
+        if (
+            mouseX >= lineX && mouseX <= lineX + textWidth + 50 && // Add padding to width
+            mouseY >= lineY && mouseY <= lineY + textHeight + 20 // Add padding to height
+        ) {
+            // Handle click for this line
+            // console.log('Clicked on line:', index)
+            const elEditorText = document.querySelector('.editor-txt').innerText.trim()
+            gMeme.selectedLineIdx = index
+            gMeme.lines[gMeme.selectedLineIdx].txt = elEditorText
+            drawText()
+        }
+    })
+})
+
+function onChangeFontSize() {
+    let elButtons = document.querySelectorAll('.btn-font');
+
+    elButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Check which button was clicked based on its class
+            if (button.classList.contains('plus')) {
+                // Handle click on the plus button
+                console.log('Plus button clicked')
+                gMeme.lines[gMeme.selectedLineIdx].size += 5
+                console.log(gMeme.selectedLineIdx);
+                console.log(gMeme.lines[gMeme.selectedLineIdx].size);
+                drawText()
+
+            } else if (button.classList.contains('minus')) {
+                // Handle click on the minus button
+                console.log('Minus button clicked')
+                gMeme.lines[gMeme.selectedLineIdx].size -= 5
+                drawText()
+            }
+        })
+    })
+}
+
 
 
 

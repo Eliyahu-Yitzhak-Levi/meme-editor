@@ -44,7 +44,7 @@ var gMeme = {
     lines: [
         {
             txt: 'Add text here',
-            size: '20',
+            size: 20,
             color: 'black',
             xLineStart: 50,
             yLineStart: 50,
