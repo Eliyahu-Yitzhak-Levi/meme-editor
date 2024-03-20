@@ -108,7 +108,7 @@ function drawText() {
             const textHeight = parseInt(gCtx.font)
             gCtx.strokeStyle = 'red' // Border color
             gCtx.lineWidth = 2 // Border width
-            gCtx.strokeRect(gMeme.lines[index].xLineStart - 10, gMeme.lines[index].yLineStart - textHeight - 10, textWidth + 50, textHeight + 20)
+            gCtx.strokeRect(gMeme.lines[index].xLineStart - 10, gMeme.lines[index].yLineStart - textHeight - 10, textWidth + 100, textHeight + 20)
         }
         // Set the font size and color for the current line
         gCtx.font = `${line.size}px Arial`
