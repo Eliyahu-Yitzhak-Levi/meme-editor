@@ -175,7 +175,7 @@ document.addEventListener('click', function (event) {
             const elEditorText = document.querySelector('.editor-txt').innerText.trim()
             gMeme.selectedLineIdx = index
             gMeme.lines[gMeme.selectedLineIdx].txt = elEditorText
-            drawText()
+            drawText() // FUNCTION WORKS, SELECTS THE WANTED LINE TO EDIT ON THE CANVAS
         }
     })
 })
