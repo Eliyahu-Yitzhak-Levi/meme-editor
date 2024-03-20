@@ -28,6 +28,20 @@ function onInit() {
 
 }
 
+
+
+
+function resetPage() {
+    let elUploadBox = document.querySelector('.upload-box')
+    elUploadBox.style.display = 'flex'
+
+    let elImgSection = document.querySelector('.img-section')
+    elImgSection.style.display = 'grid'
+
+    let elContainer = document.querySelector('.container')
+    elContainer.style.display = 'flex'
+}
+
 function renderMemeGallery() {
     let elImgSection = document.querySelector('.img-section')
 
@@ -122,6 +136,7 @@ function drawText() {
 
 
 
+
 function onAddTxtLine() {
     gMeme.numOfLines++
     let line = newLine('Add text here', 20, 'black', gMeme.lines[gMeme.numOfLines - 1].xLineStart, gMeme.lines[gMeme.numOfLines - 1].yLineStart + 50)
@@ -140,17 +155,17 @@ function onDeleteTxtLine() {
     if (gMeme.numOfLines === 0) return
 
     // Find the index of the selected line in the lines array
-    const indexToRemove = gMeme.selectedLineIdx;
+    const indexToRemove = gMeme.selectedLineIdx
 
     // Remove the line from the lines array
-    gMeme.lines.splice(indexToRemove, 1);
+    gMeme.lines.splice(indexToRemove, 1)
 
     if (gMeme.numOfLines === 0) return
     else gMeme.numOfLines--
     drawText()
 }
 
-// Add click event listener to the document because the canvas dom element is not initialized here.
+// Add click event listener to the document because the canvas dom element is not initialized here yet.
 document.addEventListener('click', function (event) {
     // Get the mouse coordinates relative to the canvas
     const canvasBounds = gElCanvas.getBoundingClientRect()
@@ -181,6 +196,7 @@ document.addEventListener('click', function (event) {
 })
 
 function onChangeFontSize() {
+
     let elButtons = document.querySelectorAll('.btn-font');
 
     elButtons.forEach(button => {
@@ -204,6 +220,20 @@ function onChangeFontSize() {
     })
 }
 
+
+function onChangeTextLocation() {
+    elButtons = document.querySelectorAll('.align')
+
+    elButtons.forEach(button => {
+        if (button.classList.contains('plus')) {
+
+        } else if (button.classList.contains('plus')) {
+
+        } else if (button.classList.contains('plus')) {
+
+        }
+    })
+}
 
 
 

@@ -53,8 +53,9 @@ body {
     /* Adjust minmax values as needed */
     background-color: rgb(113, 113, 106);
     margin: 20px auto;
-    width: 100vh;
+    width: 100%;
     padding: 5px;
+    margin-right: 50px;
 }
 
 
