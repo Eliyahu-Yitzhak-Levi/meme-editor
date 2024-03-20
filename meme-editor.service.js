@@ -40,13 +40,29 @@ var gImgs = [
 var gMeme = {
     selectedImgId: 1,
     selectedLineIdx: 0,
+    numOfLines: 0,
     lines: [
         {
-            txt: '',
+            txt: 'Add text here',
             size: 20,
-            color: 'red',
+            color: 'black',
+            xLineStart: 50,
+            yLineStart: 50,
+            xLineEnd: 0,
+            yLineEnd: 0
         }
     ]
+}
+
+
+function newLine(newTxt, newSize, newColor, newXLineStart, newYLineStart,) {
+    return {
+        txt: newTxt,
+        size: newSize,
+        color: newColor,
+        xLineStart: newXLineStart,
+        yLineStart: newYLineStart,
+    }
 }
 
 
@@ -58,22 +74,22 @@ function getMeme() {
 
 
 function updateMemeTxt(imgId, newTxt) { // updates the text of that meme
-    console.log('imgId is', imgId);
-    console.log('the text is', newTxt);
+    console.log('imgId is', imgId)
+    console.log('the text is', newTxt)
 
     gMeme.selectedImgId = imgId
 
-    console.log('selectedImgId is', gMeme.selectedImgId);
+    console.log('selectedImgId is', gMeme.selectedImgId)
 
     gMeme.lines[0].txt = newTxt
 
-    console.log('gMeme.lines[0].txt is :', gMeme.lines[0].txt);
+    console.log('gMeme.lines[0].txt is :', gMeme.lines[0].txt)
 }
 
 
 function getImgId() {
     // Use the find method to search for the image with the selected ID
-    const img = gImgs.find(img => img.id === gMeme.selectedImgId);
+    const img = gImgs.find(img => img.id === gMeme.selectedImgId)
 
-    return img; // Return the found image object
+    return img // Return the found image object
 }
